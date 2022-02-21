@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/style.css">
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <nav>
+    <h1><a href="/">WMAR</a></h1>
+    <ul>
+      <% if (vendor) { %>
+        <li>Welcome, <%= vendor.email %></li>
+        <li><a href="/vendor/logout">Log out</a></li>
+      <% } else if (comp) { %>
+        <li>Welcome, <%= comp.email %></li>
+        <li><a href="/company/logout">Log out</a></li> 
+      <% } else { %>
+        <li><a href="#vendor" class="btn">VENDOR</a></li>
+        <li><a href="#company" class="btn">COMPANY</a></li>
+      <% } %>
+    </ul>
+  </nav>
